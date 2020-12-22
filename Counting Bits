@@ -1,0 +1,22 @@
+class Solution {
+    public int[] countBits(int num) {
+        int[] a=new int[num+1];
+        for(int i=0;i<=num;i++)
+        {
+            a[i]=r(i);
+        }
+        return a;
+      }
+        private static int r(int n)
+        {
+            if(n==0)
+                return 0;
+            if(n==1)
+                return 1;
+            if(n%2==0)
+                return r(n/2);
+            else
+                return 1+r(n/2);
+        }
+        
+    }
