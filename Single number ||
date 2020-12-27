@@ -1,0 +1,17 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        HashMap<Integer,Integer> seen=new HashMap<Integer,Integer>();
+       // int k;
+        for(int i:nums)
+        {    seen.put(i,seen.getOrDefault(i, 0)+1);
+        }
+        
+       
+        for(int i:seen.keySet())
+            { if(seen.get(i)==1)
+            return i;
+            }
+        
+        return -1;
+    }
+}
