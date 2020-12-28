@@ -1,0 +1,15 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+       HashMap<Integer,Integer> col=new HashMap<Integer,Integer>();
+        for(int i:nums)
+        {
+            col.put(i,col.getOrDefault(i,0)+1);
+        }
+        for(int j:col.keySet())
+        {
+            if(col.get(j)>nums.length/2)
+                return j;
+        }
+        return -1;
+    }
+}
