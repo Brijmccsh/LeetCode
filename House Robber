@@ -1,0 +1,19 @@
+class Solution {
+    public int rob(int[] nums) {
+        int money=0;
+        if(nums.length==0)
+            return 0;
+       if(nums.length==1)
+           return nums[0];
+        if(nums.length==2)
+            return Math.max(nums[0],nums[1]);
+     int[] peas=new int[nums.length];
+        peas[0]=nums[0];
+        peas[1]=Math.max(nums[0],nums[1]);
+        for(int i=2;i<nums.length;i++)
+        {
+            peas[i]=Math.max(nums[i]+peas[i-2],peas[i-1]);
+        }
+        return peas[nums.length-1];
+    }
+}
