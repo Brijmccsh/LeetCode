@@ -1,0 +1,19 @@
+class Solution {
+    public int findDuplicate(int[] nums) {
+          int[] arr = new int[nums.length+1];
+        int a=0,b=0;
+     for(int i:nums)
+     {
+         arr[i]++;
+     }
+        for(int j=1;j<arr.length;j++)
+        {
+            if(arr[j]>=2)
+            { a=j; return a;
+            }
+           
+           // if(arr[j]==0)b=j;   
+        }
+        return -1;
+    }
+}
