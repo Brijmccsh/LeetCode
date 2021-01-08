@@ -1,0 +1,30 @@
+class Solution {
+    public int[] fairCandySwap(int[] A, int[] B) {
+        int[] ans=new int[2];
+        int s1=0,s2=0;int x,y;
+        for(int i=0;i<A.length;i++)
+        {
+            s1=s1+A[i];
+        }
+         for(int i=0;i<B.length;i++)
+        {
+            s2=s2+B[i];
+        }
+        for(int i=0;i<A.length;i++)
+        { x=A[i];
+            for(int j=0;j<B.length;j++)
+            { y=B[j];
+                
+                    if(s1-x+y==s2+x-y)
+                    {
+                        ans[0]=x;ans[1]=y;
+                        break;
+                    }
+                
+                
+            }
+        }
+      
+         return ans;
+   }
+}
