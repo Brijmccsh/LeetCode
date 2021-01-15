@@ -1,0 +1,25 @@
+class Solution {
+    public List<Integer> countSmaller(int[] nums) {
+     
+      //  int i=0;
+        
+        List<Integer> list = new ArrayList<Integer>(nums.length+1);
+        
+        for(int i=0;i<nums.length;i++)
+        {int j=i+1;int s=0;
+         while(j<nums.length)
+        {
+            
+            if(nums[i]>nums[j]&&i!=j)
+            {
+                s++;
+            }
+             j++;
+            
+        }
+            list.add(s);
+        }
+        return list;
+      
+    }
+}
