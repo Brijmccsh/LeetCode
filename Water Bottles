@@ -1,0 +1,23 @@
+class Solution {
+    public int numWaterBottles(int numBottles, int numExchange) {
+     int d=numBottles;int e=d;
+        int k=0;
+        if(d<numExchange)
+            return d;
+        else if(d==numExchange)
+            return d+1;
+        else
+        {
+           while(e>=numExchange)
+           {
+            
+                 e=e-numExchange;
+                 d++;
+                 e++;
+             
+               
+           }
+        }
+       return d;
+    }
+}
