@@ -1,0 +1,31 @@
+class Solution {
+    public int minimumBoxes(int[] apple, int[] capacity) {
+        int ta = 0;
+        int tc = 0;
+        for(int i : apple){
+            ta += i;
+        }
+        for(int i : capacity){
+            tc += i;
+        }
+        int c = 0;
+        int s = 0;
+        int i = 0;
+        Integer[] capacity1 = Arrays.stream(capacity).boxed().toArray(Integer[]::new);
+        Arrays.sort(capacity, Collections.reverseOrder());
+        while(true){
+            
+            if(s < ta){
+                s += capacity[i++];
+                c++;
+            }
+            else{
+                break;
+            }
+            
+
+        }
+        return c;
+
+    }
+}
