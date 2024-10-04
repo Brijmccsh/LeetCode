@@ -1,0 +1,32 @@
+class Solution {
+    public int sumOfEncryptedInt(int[] nums) {
+        int sum = 0;
+        for(int i : nums){
+            sum += encrypt(i);
+            //System.out.println(sum);
+        }
+        return sum;
+    }
+    public int encrypt(int x){
+        int n = x;
+        int s = 0;
+        int res = 0;
+        int max = Integer.MIN_VALUE;
+        while(n != 0){
+            int r = n%10;
+            if(max < r){
+                max = r;
+            }
+            n = n/10;
+            s++;
+        }
+        //System.out.println(max);
+        //res = max;
+        while(s > 0){
+            res = res * 10 + max;
+            s--;
+            System.out.println(res);
+        }
+        return res;
+    }
+}
