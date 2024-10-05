@@ -1,0 +1,21 @@
+class Solution {
+    public boolean findSubarrays(int[] nums) {
+        Set<Integer> m = new HashSet<>();
+        int sum = 0;
+        
+        for(int i = 0; i < nums.length - 1; i++){
+            sum = nums[i] + nums[i + 1];
+            if(m.contains(sum)){
+                return true;
+            }
+            else{
+                m.add(sum);
+            }
+            System.out.println(sum);
+            
+        }
+        
+        return false;
+        
+    }
+}
